@@ -1,7 +1,7 @@
 import sys
 import argparse
 from Bio import SeqIO
-for record in SeqIO.parse("/hwfssz1/ST_EARTH/P18Z10200N0160/P18Z10200N0197_temp/fuyiyang/exercise/document/human_mitochondrial.fasta", "fasta"):
+for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
     parser = argparse.ArgumentParser()
     parser.add_argument("-strand", help="the output direction of sequence",choices=["+","-"])
     args = parser.parse_args()
