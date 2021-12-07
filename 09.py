@@ -1,6 +1,6 @@
 import sys
 from Bio import SeqIO
-for record in SeqIO.parse("/hwfssz1/ST_EARTH/P18Z10200N0160/P18Z10200N0197_temp/fuyiyang/exercise/document/human_mitochondrial.fasta", "fasta"):
+for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
     seq = ''.join(record.seq)
     h2 = (l - 51) / 2
     a = seq[:int(h2 + 50)]
