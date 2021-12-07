@@ -1,0 +1,11 @@
+import sys
+from Bio import SeqIO
+for record in SeqIO.parse("/hwfssz1/ST_EARTH/P18Z10200N0160/P18Z10200N0197_temp/fuyiyang/exercise/document/human_mitochondrial.fasta", "fasta"):
+    seq = ''.join(record.seq)
+    l = len(seq)
+    if l % 2 == 0:
+        n = 10
+    else:
+        n = 11
+    h = (l - n) / 2
+    print(seq[:int(h + n)], '\n' * 2, seq[int(h):])
