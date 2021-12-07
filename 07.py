@@ -1,9 +1,8 @@
 import sys
-import argparse
 import re
 import levenshtein
 from Bio import SeqIO
-for record in SeqIO.parse("/hwfssz1/ST_EARTH/P18Z10200N0160/P18Z10200N0197_temp/fuyiyang/exercise/document/human_mitochondrial.fasta", "fasta"):
+for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
     seq = ''.join(record.seq)
     #原始方法(正则表达式）
     pattern = re.compile('''.atcaactta|c.tcaactta|ca.caactta|cat.aactta|catc.actta|catca.ctta|
