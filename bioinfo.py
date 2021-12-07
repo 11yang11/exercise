@@ -1,11 +1,11 @@
+#!/usr/bin/env python
 import sys
 import argparse
 import re
 import levenshtein
 #00
-sys.path.append("d:\lib\site-packages")
 from Bio import SeqIO
-for record in SeqIO.parse("d:\BGI\human_mitochondrial.fasta", "fasta"):
+for record in SeqIO.parse("/hwfssz1/ST_EARTH/P18Z10200N0160/P18Z10200N0197_temp/fuyiyang/exercise/document/human_mitochondrial.fasta", "fasta"):
     #01
     print("seq_len:", len(record.seq))
     print("gc_proportion:", (record.seq.count("C") + record.seq.count("G")) / len(record.seq))
