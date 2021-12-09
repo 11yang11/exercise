@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from Bio import SeqIO
 for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
     #01
