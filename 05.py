@@ -9,5 +9,5 @@ for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
     window = args.window
     step = args.step
     for index in range(len(record.seq)):
-        if index % step == 0:
+        if len(record.seq)-index >= window and index % step == 0:
             print(record.id, "_s", index, "e", index + window, ":", record.seq[index:index + window], sep='')
