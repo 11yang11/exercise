@@ -3,8 +3,11 @@ import argparse
 from Bio import SeqIO
 for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
     parser = argparse.ArgumentParser()
+    parser.add_argument("-start", help="start base index",required=True,type=int)
+    parser.add_argument("-end", help="end base index",required=True,type=int)
     parser.add_argument("-strand", help="the output direction of sequence",choices=["+","-"])
     args = parser.parse_args()
+    sub_seq = record.seq[args.start-1:args.end]
     if args.strand == "+":
         print(sub_seq)
     elif args.strand == "-":
@@ -30,3 +33,6 @@ for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
         transtable = sub_seq.maketrans('ATCG','TAGC')
         complement_seq = sub_seq.translate(transtable)
         print(complement_seq[::-1])
+    else:
+        print("NO parameter '-strand',please choose direction of the sequence")
+
