@@ -6,8 +6,6 @@ for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
 parser = argparse.ArgumentParser()
 parser.add_argument("-N",help="overlapping length between two sequences with equal length",type=int)
 args = parser.parse_args()
-for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
-    seq = ''.join(record.seq)
 l = len(seq)
 n = args.N
 if args.N:
