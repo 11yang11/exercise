@@ -13,7 +13,7 @@ def edit_distance(str1, str2):
             if str1[i-1] == str2[j-1]:
                 matrix[i][j] = matrix[i-1][j-1]
             else:
-                matrix[i][j] = min(matrix[i-1][j-1]+1,matrix[i-1][j]+1,matrix[i][j-1]+1)
+                matrix[i][j] = matrix[i-1][j-1]+1
     return matrix[-1][-1]
     #返回最后一个值
     
