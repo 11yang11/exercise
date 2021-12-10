@@ -7,7 +7,6 @@ args = parser.parse_args()
 for record in SeqIO.parse("human_mitochondrial.fasta", "fasta"):
     seq = ''.join(record.seq)
 l = len(seq)
-l = len(seq)
 n = args.N
 if args.N:
     if l % 2 == 0 and n % 2 == 0:
